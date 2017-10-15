@@ -32,11 +32,13 @@ const TodoStoreForm = ({storeTodo}) => {
 export default TodoStoreForm
 ```
 
+以下の形で input という変数に対して DOM が紐付けられる。紐付ける変数は予め let で宣言しておく。
+
+input.value でテキストの値が取れ、input.value = '文字列' で文字列を与えられる。 
+
 ```js
 <input ref={(i) => input = i}/>
 ```
-
-
 
 
 
