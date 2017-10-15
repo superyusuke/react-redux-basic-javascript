@@ -1,6 +1,8 @@
 [https://codesandbox.io/s/x9p4qw2j94](https://codesandbox.io/s/x9p4qw2j94)
 
-{...todo}とすると、todoオブジェクトを展開して、渡せる。
+{...todo} とすると、todo オブジェクトを展開して、渡せる。
+
+つまり、todo オブジェクトの中の各プロパティ \(id: 1 と text: 'text'\) を、name={value} という形で渡しているのと同じことになる。
 
 ```js
 // index.js
@@ -23,7 +25,6 @@ const App = () => (
 );
 
 render(<App />, document.getElementById("root"));
-
 ```
 
 ```js
@@ -41,7 +42,6 @@ const Sub1 = ({ id, text }) => {
 };
 
 export default Sub1;
-
 ```
 
 ```js
