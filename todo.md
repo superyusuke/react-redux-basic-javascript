@@ -2,7 +2,7 @@
 
 ほほ
 
-[https://codesandbox.io/s/yqqno6qj8v](https://codesandbox.io/s/yqqno6qj8v)
+[https://codesandbox.io/s/x9p4qw2j94](https://codesandbox.io/s/x9p4qw2j94)
 
 {...todo}とすると、todoオブジェクトを展開して、渡せる。
 
