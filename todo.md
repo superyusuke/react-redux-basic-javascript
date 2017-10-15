@@ -1,8 +1,8 @@
 コードが動くか要確認
 
+ほほ
 
-
-ほほｈ
+[https://codesandbox.io/s/yqqno6qj8v](https://codesandbox.io/s/yqqno6qj8v)
 
 {...todo}とすると、todoオブジェクトを展開して、渡せる。
 
