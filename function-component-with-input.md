@@ -1,51 +1,42 @@
 [https://github.com/superyusuke/react-simple-todo-list](https://github.com/superyusuke/react-simple-todo-list)
 
 ```js
-import React, { Component } from 'react'
-import Todo from './Todo'
+import React from 'react'
 
-export default class TodoList extends Component {
-  render () {
-    // アクション情報を取得
-    const actions = {
-      destoryTodo: this.props.destoryTodo,
-      updateTodo: this.props.updateTodo,
+const TodoStoreForm = ({storeTodo}) => {
+  let input
+  let input2
+  const submitHandler = (e) => {
+    e.preventDefault()
+    const todoTitle = input.value
+    if (todoTitle) {
+      storeTodo(todoTitle)
+      input.value = ''
     }
-
-    // TODO情報を取得
-    const todos = this.props.todos
-
-    // 各TODO情報をを作成
-    const notStartedTodos = todos.filter((todo) => todo.status === 1).map((todo, index) => {
-        return <li key={index}><Todo {...actions} {...todo} /></li>
-      })
-    const inProgressTodos = todos.filter((todo) => todo.status === 2).map((todo, index) => {
-        return <li key={index}><Todo {...actions} {...todo} /></li>
-      })
-    const doneTodos = todos.filter((todo) => todo.status === 3).map((todo, index) => {
-        return <li key={index}><Todo {...actions} {...todo} /></li>
-      })
-
-    // 各TODOを表示
-    return (
-      <div className="TodoList">
-        <h2>未着手のTODO</h2>
-        <ul>
-          {notStartedTodos}
-        </ul>
-        <h2>進行中のTODO</h2>
-        <ul>
-          {inProgressTodos}
-        </ul>
-        <h2>完了のTODO</h2>
-        <ul>
-          {doneTodos}
-        </ul>
-      </div>
-    )
+    if (input2.value) {
+      console.log(input2.value)
+    }
   }
+
+  return (
+    <div className="TodoStoreForm">
+      <form onSubmit={(e) => submitHandler(e)}>
+        <input type="text" ref={(i) => input = i}/>
+        <input type="text" ref={(i) => input2 = i} placeholder="just for console.log"/>
+        <input type="submit" value="追加"/>
+      </form>
+    </div>
+  )
 }
+
+export default TodoStoreForm
 ```
+
+```js
+<input ref={(i) => input = i}/>
+```
+
+
 
 
 
