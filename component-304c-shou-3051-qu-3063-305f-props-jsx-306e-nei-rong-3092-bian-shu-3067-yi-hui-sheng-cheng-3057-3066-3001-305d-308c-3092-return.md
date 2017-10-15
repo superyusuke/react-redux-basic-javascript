@@ -7,13 +7,15 @@ const Component A = ({id, date, text}) => {
 }
 ```
 
+条件式で JSX の内容を変更したい場合
+
 ```js
 const Component A = ({id, date, text}) => {
     const button = () => {
         switch (boolean) {
             case true:
                 return <button onClick={console.log(id)}>{date}:{text}</button>
-                
+
             case false:
                 return <button onClick={console.log(id)}>{date}:{text}false</button>
             default:
@@ -22,7 +24,6 @@ const Component A = ({id, date, text}) => {
     }    
     return button
 }
-
 ```
 
 
