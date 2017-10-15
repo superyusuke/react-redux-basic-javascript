@@ -2,7 +2,7 @@
 
 {...todo} とすると、todo オブジェクトを展開して、渡せる。
 
-つまり、todo オブジェクトの中の各プロパティ \(id: 1 と text: 'text'\) を、name={value} という形で渡しているのと同じことになる。
+つまり、todo オブジェクトの中の各プロパティ \(id: 1 と text: 'text'\) \(name: value\) を、name={value} という形で渡しているのと同じことになる。
 
 ```js
 // index.js
