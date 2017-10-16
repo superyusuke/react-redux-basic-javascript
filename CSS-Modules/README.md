@@ -1,0 +1,1 @@
+CSS-Modules の仕様
