@@ -34,12 +34,11 @@ webpack.config.dev.js の 165 行目あたりを変更。具体的には modules
                         localIdentName: "[name]__[local]___[hash:base64:5]"
                       },
                     },
-                  
 ```
 
 ## 基礎
 
-
+読み込んだ CSS はコンポート内だけに有効。クラスネームに、styles.CSSで指定したクラス名 を指定する。
 
 ```js
 // app.js
@@ -60,8 +59,11 @@ class App extends Component {
 export default App;
 ```
 
+読み込む CSS は普通の CSS を書けばよい。
+
 ```css
 /* App.css */
+
 .app {
   background-color: red;
 }
