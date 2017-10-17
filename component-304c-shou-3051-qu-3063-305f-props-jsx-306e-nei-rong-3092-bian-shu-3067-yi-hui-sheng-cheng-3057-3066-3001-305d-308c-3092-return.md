@@ -1,3 +1,5 @@
+# Component が受け取った props をもとに、jsx の内容を変数で一回生成して、それを return するパターン
+
 一旦 return の外で変数内にJSX を入れて、その変数を return する。
 
 ```js

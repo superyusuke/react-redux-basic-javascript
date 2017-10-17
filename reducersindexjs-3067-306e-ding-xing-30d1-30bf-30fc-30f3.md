@@ -1,3 +1,5 @@
+# reducers/index.js での定型パターン
+
 ```js
 import { combineReducers } from 'redux'
 import todos from './todos'
