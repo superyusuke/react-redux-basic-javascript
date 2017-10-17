@@ -26,13 +26,11 @@ package.json: に以下２つを追加
     "build": "react-scripts build",
 ```
 
-deploy する。
+deploy する。このコマンド一発で、GitHub のリポジトリの gh-pages ブランチにプッシュされる。
 
 ```
 $ npm run deploy
 ```
 
 GitHub → setting → GitHub Pages → source →gh-pages branch に変更。
-
-
 
