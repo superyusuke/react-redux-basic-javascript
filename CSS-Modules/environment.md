@@ -34,9 +34,16 @@ webpack.config.dev.js の 165 行目あたりを変更。具体的には modules
                         localIdentName: "[name]__[local]___[hash:base64:5]"
                       },
                     },
+                  
 ```
 
+## 基礎
+
+
+
 ```js
+// app.js
+
 import React, { Component } from 'react';
 import styles from './App.css';
 
@@ -54,6 +61,7 @@ export default App;
 ```
 
 ```css
+/* App.css */
 .app {
   background-color: red;
 }
