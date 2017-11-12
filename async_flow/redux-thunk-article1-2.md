@@ -13,7 +13,7 @@ Now, here is why Action Creators are different to Actions and do not necessarily
 ## Creating our actions
 Let's create an actions/items.js file to contain our action creators. We'll start with our 3 simple actions.
 
-
+続く
 
 ////
 なるほど。redux-thunk で store をラップする等の準備をした後、action の中で、特殊な関数を作る。return (dispatch) => {} で、非同期通信や dispatch をする関数を return する。これを実行すればいい。
