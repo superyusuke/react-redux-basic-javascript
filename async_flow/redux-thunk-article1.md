@@ -1,4 +1,6 @@
-するまで\# A Dummy's Guide to Redux and Thunk in React
+# A Dummy's Guide to Redux and Thunk in React
+
+[Original article](https://codepen.io/stowball/post/a-dummy-s-guide-to-redux-and-thunk-in-react)
 
 If, like me, you've [read the Redux docs](https://redux.js.org/), [watched Dan's videos](https://egghead.io/courses/getting-started-with-redux), [done Wes' course](https://www.learnredux.com/) and still not quite grasped how to use Redux, hopefully this will help.
 
@@ -258,6 +260,7 @@ There are a few core principles to Redux which we need to understand:
 This should all become clearer as we start to convert our application to use Redux.
 
 これらのことを明確に理解しておきましょう。
+
 
 
 ////
