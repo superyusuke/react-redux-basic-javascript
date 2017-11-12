@@ -266,6 +266,8 @@ This should all become clearer as we start to convert our application to use Red
 ```js
 export const fetch = (url) => {
     return (dispatch) => {
+        dispatch(action)
+    
         fetch(url)
             .then((res)=> {
             })
