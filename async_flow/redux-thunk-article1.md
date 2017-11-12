@@ -88,9 +88,9 @@ It may not seem like much, but this is a good start.
 
 まだ十分に色々なものが揃ってはいませんが、始めるにあたって最低限のものはあります。
 
-When rendered, the component should output 4 list items, but if you were to set isLoading or hasErrored to true, a relevant <p></p> would be output instead.
+When rendered, the component should output 4 list items, but if you were to set isLoading or hasErrored to true, a relevant `<p></p>` would be output instead.
 
-レンダーされると、
+レンダーが実行されると、component は4つのリストアイテムを出力します。しかし isLoading もしくは hasErrored を true にすると、4つのリストアイテムを出力する代わりに、関連する `<p></p>` が出力されます。 
 
 
 
