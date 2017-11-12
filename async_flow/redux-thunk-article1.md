@@ -110,6 +110,38 @@ item を fetch するために、Fetch API を使うことしましょう。fetc
 npm install whatwg-fetch --save
 ```
 
+The conversion is actually quite simple.
+
+加える変更は非常にシンプルです。
+
+1. First we'll set our initial items to an empty array []
+1. Now we'll add a method to fetch the data and set the loading and error states:
+
+
+1. まず item の初期値を空の array [] に変更します。(訳注:constructor の中の state)
+1. そして 「Date を fetch し、loading もしくは　error の状態をセットする」メソッドを加えます。
+
+このメソッドは次のようになります。
+```
+fetchData(url) {
+    this.setState({ isLoading: true });
+
+    fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+
+            this.setState({ isLoading: false });
+
+            return response;
+        })
+        .then((response) => response.json())
+        .then((items) => this.setState({ items })) // ES6 property value shorthand for { items: items }
+        .catch(() => this.setState({ hasErrored: true }));
+}
+```
+
 
 
 
