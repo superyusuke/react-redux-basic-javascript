@@ -92,5 +92,14 @@ When rendered, the component should output 4 list items, but if you were to set 
 
 レンダーが実行されると、component は4つのリストアイテムを出力します。しかし isLoading もしくは hasErrored を true にすると、4つのリストアイテムを出力する代わりに、関連する `<p></p>` が出力されます。 
 
+### Making it dynamic
+
+Hard-coding the items doesn't make for a very useful component, so let's fetch the items from a JSON API, which will also allow us to set isLoading and hasErrored as appropriate.
+
+ハードコンディングされたアイテム(訳注:state の中に直接アイテムの内容を記録しているので、変化しない=ハードコーディング) は、実際的ではないので、次に JSON API から JSON を fetch して、さらに isLoading と hasErrored を適切に変更するアプリケーションにしていきましょう。
+
+The response will be identical to our hard-coded list of items, but in the real world, you could pull in a list of best-selling books, latest blog posts, or whatever suits your application.
+
+To fetch the items, we're going to use the aptly named Fetch API. Fetch makes making requests much easier than the classic XMLHttpRequest and returns a promise of the resolved response (which is important to Thunk). Fetch isn't available in all browsers, so you'll need to add it as a dependency to your project with:
 
 
