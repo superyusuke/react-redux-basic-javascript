@@ -198,4 +198,11 @@ However, in reality, a component shouldn't include logic to fetch data, and data
 
 さて上手くはいきましたが、実際のアプリケーションにおいては、コンポーネントは data を fetch するロジックを持つべきではありませんし、また取得したデータもコンポーネントの state に持つべきではありません。ここで Redux の出番です。
 
+## fetch 補足
 
+https://codepen.io/nakanishi/pen/MOmJgd?editors=1111
+
+1. まず fetch(url) で リクエストをする。
+1. .then() でつなぐ。.then((response) => {console.log(response)})
+1. こうすることで、レスポンスが帰ってきたら、response に引数として渡されて、callback を実行する。
+1. 何かを return 
