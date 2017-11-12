@@ -84,3 +84,13 @@ class ItemList extends Component {
 export default ItemList;
 ```
 
+It may not seem like much, but this is a good start.
+
+まだ十分に色々なものが揃ってはいませんが、始めるにあたって最低限のものはあります。
+
+When rendered, the component should output 4 list items, but if you were to set isLoading or hasErrored to true, a relevant <p></p> would be output instead.
+
+レンダーされると、
+
+
+
