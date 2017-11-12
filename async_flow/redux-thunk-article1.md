@@ -145,6 +145,14 @@ fetchData(url) {
 
 3. Then we'll call it when the component mounts:
 
+3. 次に上記のメソッドを、component がマウントされた際に実行します。
+
+```
+componentDidMount() {
+    this.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+}
+```
+
 
 
 
