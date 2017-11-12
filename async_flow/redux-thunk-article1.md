@@ -100,6 +100,8 @@ Hard-coding the items doesn't make for a very useful component, so let's fetch t
 
 The response will be identical to our hard-coded list of items, but in the real world, you could pull in a list of best-selling books, latest blog posts, or whatever suits your application.
 
+これによって返される情報は、今回は固定されたリストですが、実際のアプリケーションでは「売れ筋書籍、最新のポスト」とうとう、自分のアプリケーションに必要なものを引っ張ってくることになります。
+
 To fetch the items, we're going to use the aptly named Fetch API. Fetch makes making requests much easier than the classic XMLHttpRequest and returns a promise of the resolved response (which is important to Thunk). Fetch isn't available in all browsers, so you'll need to add it as a dependency to your project with:
 
 
