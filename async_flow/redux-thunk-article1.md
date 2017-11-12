@@ -261,7 +261,7 @@ This should all become clearer as we start to convert our application to use Red
 
 
 ////
-なるほど。redux-thunk で store をラップする等の準備をした後、action の中で、
+なるほど。redux-thunk で store をラップする等の準備をした後、action の中で、特殊な関数を作る。return (dispatch) => {} で、非同期通信や dispatch をする関数を return する。これを実行すればいい。
 
 ```js
 export const fetch = (url) => {
