@@ -122,7 +122,8 @@ The conversion is actually quite simple.
 1. そして 「Date を fetch し、loading もしくは　error の状態をセットする」メソッドを加えます。
 
 このメソッドは次のようになります。
-```
+
+```js
 fetchData(url) {
     this.setState({ isLoading: true });
 
