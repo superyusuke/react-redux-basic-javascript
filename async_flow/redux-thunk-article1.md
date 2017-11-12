@@ -14,5 +14,9 @@ This tutorial assumes you have a basic grasp of React and ES6/2015, but it shoul
 
 ## The non-Redux way
 
+Redux を使わない方法
+
 Let's start with creating a React component in`components/ItemList.js`to fetch and display a list of items.
+
+ではまずは `components/ItemList.js` の中に、fetch をしてそれを元にアイテムのリストを表示するコンポーネントを作っていきましょう。
 
