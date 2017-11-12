@@ -104,4 +104,12 @@ The response will be identical to our hard-coded list of items, but in the real 
 
 To fetch the items, we're going to use the aptly named Fetch API. Fetch makes making requests much easier than the classic XMLHttpRequest and returns a promise of the resolved response (which is important to Thunk). Fetch isn't available in all browsers, so you'll need to add it as a dependency to your project with:
 
+item を fetch するために、Fetch API を使うことしましょう。fetch は伝統的な XMLHttpRequest よりも簡単に request を発行することができ、受け取った response の promise オブジェクトを return します。(これが thunk にとっては重要です) fetch は全てのブラウザで使うことはできないので、次のものをプロジェクトに追加しましょう。
+
+```
+npm install whatwg-fetch --save
+```
+
+
+
 
