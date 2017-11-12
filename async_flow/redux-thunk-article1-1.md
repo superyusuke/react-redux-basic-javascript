@@ -286,5 +286,6 @@ export const fetch = (url) => {
             .then((res)=> {
             })
     }
+
 } 
 ```
