@@ -262,3 +262,13 @@ This should all become clearer as we start to convert our application to use Red
 
 ////
 なるほど。redux-thunk で store をラップする等の準備をした後、action の中で、
+
+```js
+export const fetch = (url) => {
+    return (dispatch) => {
+        fetch(url)
+            .then((res)=> {
+            })
+    }
+} 
+```
