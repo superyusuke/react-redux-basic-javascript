@@ -20,3 +20,9 @@ Let's start with creating a React component in`components/ItemList.js`to fetch a
 
 ではまずは `components/ItemList.js` の中に、fetch をしてそれを元にアイテムのリストを表示するコンポーネントを作っていきましょう。
 
+### Laying the foundations
+基礎となるレイヤーを作成する
+
+First we'll setup a static component with a state that contains various items to output, and 2 boolean states to render something different when it's loading or errored respectively.
+
+まずは static なコンポネーントを作っていきます。このコンポーネントは、state に、出力するアイテムのための情報、それから 2 つのブーリアンを持ちます。この boolean は、それぞれローディング時とエラーが発生した時に異なる内容を表示するために必要な state です。
