@@ -147,12 +147,53 @@ fetchData(url) {
 
 3. 次に上記のメソッドを、component がマウントされた際に実行します。
 
-```
+```js
 componentDidMount() {
     this.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
 }
 ```
 
+そうすると全体としては次のようになります。変更がない行に関しては省きました。
 
+```js
+class ItemList extends Component {
+    constructor() {
+        this.state = {
+            items: [],
+        };
+    }
+
+    fetchData(url) {
+        this.setState({ isLoading: true });
+
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+
+                this.setState({ isLoading: false });
+
+                return response;
+            })
+            .then((response) => response.json())
+            .then((items) => this.setState({ items }))
+            .catch(() => this.setState({ hasErrored: true }));
+    }
+
+    componentDidMount() {
+        this.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+    }
+
+    render() {
+    }
+}
+```
+
+And that's it. Your component now fetches the items from a REST endpoint! You should hopefully see "Loading…" appear briefly before the 4 list items. If you pass in a broken URL to fetchData you should see our error message.
+
+さて、これで終わりです。これによってコンポーネントは、REST endpoint からアイテムを fetch するようになりました。4つのアイテムを表示する少し前に、短い時間ではありますが「Loading...」の文字が出ていることでしょう。もし fetechData に対して正常ではない URL を与えると、error message が表示されるはずです。
+
+However, in reality, a component shouldn't include logic to fetch data, and data shouldn't be stored in a component's state, so this is where Redux comes in.
 
 
