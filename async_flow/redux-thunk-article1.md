@@ -115,11 +115,11 @@ The conversion is actually quite simple.
 加える変更は非常にシンプルです。
 
 1. First we'll set our initial items to an empty array []
-1. Now we'll add a method to fetch the data and set the loading and error states:
+2. Now we'll add a method to fetch the data and set the loading and error states:
 
 
 1. まず item の初期値を空の array [] に変更します。(訳注:constructor の中の state)
-1. そして 「Date を fetch し、loading もしくは　error の状態をセットする」メソッドを加えます。
+2. そして 「Date を fetch し、loading もしくは　error の状態をセットする」メソッドを加えます。
 
 このメソッドは次のようになります。
 
@@ -142,6 +142,8 @@ fetchData(url) {
         .catch(() => this.setState({ hasErrored: true }));
 }
 ```
+
+3. Then we'll call it when the component mounts:
 
 
 
