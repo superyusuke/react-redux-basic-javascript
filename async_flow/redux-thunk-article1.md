@@ -196,4 +196,6 @@ And that's it. Your component now fetches the items from a REST endpoint! You sh
 
 However, in reality, a component shouldn't include logic to fetch data, and data shouldn't be stored in a component's state, so this is where Redux comes in.
 
+さて上手くはいきましたが、実際のアプリケーションにおいては、コンポーネントは data を fetch するロジックを持つべきではありませんし、また取得したデータもコンポーネントの state に持つべきではありません。ここで Redux の出番です。
+
 
