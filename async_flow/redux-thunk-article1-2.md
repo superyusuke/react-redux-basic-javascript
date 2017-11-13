@@ -8,10 +8,36 @@ From the work we've already done, we know that our state needs to have 3 propert
 
 Now, here is why Action Creators are different to Actions and do not necessarily have a 1:1 relationship: we need a fourth action creator that calls our 3 other action (creators) depending on the status of fetching the data. This fourth action creator is almost identical to our original fetchData() method, but instead of directly setting the state with this.setState({ isLoading: true }), we'll dispatch an action to do the same: dispatch(isLoading(true)).
 
-?Now, here is why Action Creators are different to Actions and do not necessarily have a 1:1 relationship? 我々は4番目のアクションクリエイターが必要です。これは他の3つの action (もしくは  action creator) を、data の fetch の状態に応じて呼び出すものです。(訳注:fetch を開始したら、loading を true にするアクションを呼び出し、fetch が完成したら item の state を更新する action を呼び出し、失敗したら、error 用の action を呼び出す。) この4つめの action creator は、ほとんどこの記事の冒頭で作成した元の fetchData() メソッドとほとんど同じ機能を持つものです。ただい、state を直接 this.setState({isLoading: true}) と変更するのではなくて、同じように state を変更する action を dispatch します。つまり dispatch(isLoading(true))といった具合にです。
+?Now, here is why Action Creators are different to Actions and do not necessarily have a 1:1 relationship? 
+ではここからは、アクションクリエイターとアクションがなぜ違うものなのかということについて説明していきましょう。我々は4番目のアクションクリエイターが必要です。これは他の3つの action (もしくは  action creator) を、data の fetch の状態に応じて呼び出すものです。(訳注:fetch を開始したら、loading を true にするアクションを呼び出し、fetch が完成したら item の state を更新する action を呼び出し、失敗したら、error 用の action を呼び出す。) この4つめの action creator は、ほとんどこの記事の冒頭で作成した元の fetchData() メソッドとほとんど同じ機能を持つものです。ただ、state を直接 this.setState({isLoading: true}) と変更するのではなくて、同じように state を変更する action を dispatch します。つまり dispatch(isLoading(true))といった具合にです。
 
 ## Creating our actions
 Let's create an actions/items.js file to contain our action creators. We'll start with our 3 simple actions.
+
+では actions/items.js ファイルを作って、ここにアクションクリエイターを書いていきましょう。まずは3つのシンプルなものを書きます。
+
+```
+export function itemsHasErrored(bool) {
+    return {
+        type: 'ITEMS_HAS_ERRORED',
+        hasErrored: bool
+    };
+}
+
+export function itemsIsLoading(bool) {
+    return {
+        type: 'ITEMS_IS_LOADING',
+        isLoading: bool
+    };
+}
+
+export function itemsFetchDataSuccess(items) {
+    return {
+        type: 'ITEMS_FETCH_DATA_SUCCESS',
+        items
+    };
+}
+```
 
 続く
 
