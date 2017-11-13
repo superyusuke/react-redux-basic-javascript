@@ -8,7 +8,7 @@ If, like me, you've [read the Redux docs](https://redux.js.org/), [watched Dan's
 
 It took me a few attempts at using Redux before it clicked, so I thought I'd write down the process of converting an existing application that fetches JSON to use Redux and [Redux Thunk](https://github.com/gaearon/redux-thunk). If you don't know what Thunk is, don't worry too much, but we'll use it to make asynchronous calls in the "Redux way".
 
-Redux をきっちり理解できる前に、Redux を使うのはかなり難しいと思うので、この記事では、既存の JSON を fetch するアプリケーションを書き換えて、Redux と Redux Thunk を使ったものへとする過程を記します。Thunk が何か知らなくてもあまり気にしなくても大丈夫です。 Redux thunk を使って "Redux way" で、非同期通信をしていきます。
+Redux をきっちり理解できる前に、Redux を使うのはかなり難しいと思うので、この記事では、既存の JSON を fetch するアプリケーションを書き換えて、Redux と Redux Thunk を使ったものへと変更していく過程を記します。Thunk が何かを知らなくてもあまり気にしなくて大丈夫です。 Redux thunk は "Redux way" で非同期通信をするために用います。
 
 This tutorial assumes you have a basic grasp of React and ES6/2015, but it should hopefully be easy enough to follow along regardless.
 
@@ -28,9 +28,9 @@ Let's start with creating a React component in`components/ItemList.js`to fetch a
 
 First we'll setup a static component with a state that contains various items to output, and 2 boolean states to render something different when it's loading or errored respectively.
 
-まずは static なコンポネーントを作っていきます。このコンポーネントは、state に、出力するアイテムのための情報、それから 2 つのブーリアンを持ちます。この boolean は、それぞれローディング時とエラーが発生した時に異なる内容を表示するために必要な state です。
+まずは static なコンポネーントを作っていきます。このコンポーネントは、state に、出力するアイテムのための情報、それから2つのブーリアンを持ちます。この boolean は、それぞれローディング時とエラーが発生した時に異なる内容を表示するために必要な state です。
 
-\(訳注:GitHub に各段階のソースが公開されているので活用ください\)
+(訳注:GitHub に各段階のソースが公開されているので活用ください\)
 
 ```js
 import React, { Component } from 'react';
@@ -99,7 +99,7 @@ When rendered, the component should output 4 list items, but if you were to set 
 
 Hard-coding the items doesn't make for a very useful component, so let's fetch the items from a JSON API, which will also allow us to set isLoading and hasErrored as appropriate.
 
-ハードコンディングされたアイテム\(訳注:state の中に直接アイテムの内容を記録しているので、変化しない=ハードコーディング\) は、実際的ではないので、次に JSON API から JSON を fetch して、さらに isLoading と hasErrored を適切に変更するアプリケーションにしていきましょう。
+ハードコンディングされたアイテム(訳注:state の中に直接アイテムの内容を記録しているので、変化しない=ハードコーディング) は、実際的ではないので、次に JSON API から JSON を fetch して、さらに isLoading と hasErrored を適切に変更するアプリケーションにしていきましょう。
 
 The response will be identical to our hard-coded list of items, but in the real world, you could pull in a list of best-selling books, latest blog posts, or whatever suits your application.
 
@@ -107,7 +107,7 @@ The response will be identical to our hard-coded list of items, but in the real 
 
 To fetch the items, we're going to use the aptly named Fetch API. Fetch makes making requests much easier than the classic XMLHttpRequest and returns a promise of the resolved response \(which is important to Thunk\). Fetch isn't available in all browsers, so you'll need to add it as a dependency to your project with:
 
-item を fetch するために、Fetch API を使うことしましょう。fetch は伝統的な XMLHttpRequest よりも簡単に request を発行することができ、受け取った response の promise オブジェクトを return します。\(これが thunk にとっては重要です\) fetch は全てのブラウザで使うことはできないので、次のものをプロジェクトに追加しましょう。
+item を fetch するために、Fetch API を使うことしましょう。fetch は伝統的な XMLHttpRequest よりも簡単に request を発行することができ、受け取った response の promise オブジェクトを return します。(これが thunk にとっては重要です) fetch は全てのブラウザで使うことはできないので、次のものをプロジェクトに追加しましょう。
 
 ```
 npm install whatwg-fetch --save
@@ -117,10 +117,10 @@ The conversion is actually quite simple.
 
 加える変更は非常にシンプルです。
 
-1. First we'll set our initial items to an empty array \[\]
+1. First we'll set our initial items to an empty array []
 2. Now we'll add a method to fetch the data and set the loading and error states:
 
-1. まず item の初期値を空の array \[\] に変更します。\(訳注:constructor の中の state\)
+1. まず item の初期値を空の array [] に変更します。(訳注:constructor の中の state)
 2. そして 「Date を fetch し、loading もしくは　error の状態をセットする」メソッドを加えます。
 
 このメソッドは次のようになります。
@@ -145,9 +145,8 @@ fetchData(url) {
 }
 ```
 
-1. Then we'll call it when the component mounts:
-
-2. 次に上記のメソッドを、component がマウントされた際に実行します。
+5. Then we'll call it when the component mounts:
+5. 次に上記のメソッドを、component がマウントされた際に実行します。
 
 ```js
 componentDidMount() {
