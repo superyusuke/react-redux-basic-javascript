@@ -46,11 +46,17 @@ The first 2 action creators take a`bool`\(`true`/`false`\) as their argument and
 
 The third,`itemsFetchDataSuccess()`, will be called when the data has been successfully fetched, with the data passed to it as`items`. Through the magic of ES6 property value shorthands, we'll return an object with a property called`items`whose value will be the array of`items`;
 
-_Note: that the value you use for`type`and the name of the other property that is returned is important, because you will re-use them in your reducers_
+_Note: that the value you use for `type` and the name of the other property that is returned is important, because you will re-use them in your reducers_
 
-Now that we have the 3 actions which will represent our state, we'll convert our original component's`fetchData`method to an`itemsFetchData()`action creator.
+注意:return されるオブジェクトの type の値と、その他のプロパティの名前は重要です。なぜならこれを reducer の中でも用いるからです。
+
+Now that we have the 3 actions which will represent our state, we'll convert our original component's `fetchData` method to an `itemsFetchData()` action creator.
+
+さて、3つの state に関するアクションを作りましたので、次は記事冒頭で取り扱っていたコンポーネントの中の fetchData メソッドを itemsFetchData() アクションクリエイターに変更していきましょう。
 
 By default, Redux action creators don't support asynchronous actions like fetching data, so here's where we utilise Redux Thunk. Thunk allows you to write action creators that return a function instead of an action. The inner function can receive the store methods`dispatch`and`getState`as parameters, but we'll just use`dispatch`.
+
+
 
 A real simple example would be to manually trigger`itemsHasErrored()`after 5 seconds.
 
