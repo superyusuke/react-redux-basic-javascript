@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [TypeScript](TypeScript/README.md)
 * [JavaScript](JavaScript/README.md)
   * [array.findIndex](JavaScript/arrayfindindex.md)
   * [array.slice と array.splice](JavaScript/arrayslice-arraysplice.md)
