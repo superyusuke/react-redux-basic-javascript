@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 * [TypeScript](TypeScript/README.md)
   * [article1](TypeScript/article1.md)
-
 * [JavaScript](JavaScript/README.md)
   * [array.findIndex](JavaScript/arrayfindindex.md)
   * [array.slice と array.splice](JavaScript/arrayslice-arraysplice.md)
