@@ -11,7 +11,11 @@ React に TypeScript を組み合わせて使ったことがなかった人は�
 
 Whether you are starting from scratch or interested in migrating to TypeScript, the following will help you get your project configured correctly.
 
+新しく TypeScript を使ったプロジェクトを開始するにせよ、既存のプロジェクトに TypeScript を追加するにせよ、以下の説明がプロジェクトの設定を正しく行うために役に立つはずです。
+
 ### webpack
 
 Most React projects use webpack to manage their build process (transcompilation, module loading, etc.). Webpack defers to other libraries (e.g. Babel) for transpiling source JavaScript to a flavor that can run in most (or hopefully all) browsers. For example, many projects develop in ES6 or above, and then transpile down to ES5 (this page details which browsers currently support ES5).
 A webpack config file that uses Babel for this type of transcompilation might look like this:
+
+
